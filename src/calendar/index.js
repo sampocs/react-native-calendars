@@ -100,7 +100,7 @@ class Calendar extends Component {
 
   componentWillReceiveProps(nextProps) {
     const current= parseDate(nextProps.current);
-    if (current && current.toString('yyyy MM') !== this.state.currentMonth.toString('yyyy MM')) {
+    if (current && current.toString('yyyy MM d') !== this.state.currentMonth.toString('yyyy MM d')) {
       this.setState({
         currentMonth: current.clone()
       });
@@ -108,7 +108,7 @@ class Calendar extends Component {
   }
 
   updateMonth(day, doNotTriggerListeners) {
-    if (day.toString('yyyy MM') === this.state.currentMonth.toString('yyyy MM')) {
+    if (day.toString('yyyy MM d') === this.state.currentMonth.toString('yyyy MM d')) {
       return;
     }
     this.setState({
