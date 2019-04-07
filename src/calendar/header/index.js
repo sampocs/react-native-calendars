@@ -66,6 +66,7 @@ class CalendarHeader extends Component {
   }
 
   onPressLeft() {
+    console.log('left')
     const {onPressArrowLeft} = this.props;
     if(typeof onPressArrowLeft === 'function') {
       return onPressArrowLeft(this.substractMonth);
