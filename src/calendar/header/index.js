@@ -48,9 +48,12 @@ class CalendarHeader extends Component {
 
   shouldComponentUpdate(nextProps) {
     if (
-      nextProps.month.toString('yyyy MM') !==
-      this.props.month.toString('yyyy MM')
+      nextProps.month.toString('yyyy MM d') !==
+      this.props.month.toString('yyyy MM d')
     ) {
+      return true;
+    }
+    if (nextProps.monthFormat != this.props.monthFormat) {
       return true;
     }
     if (nextProps.showIndicator !== this.props.showIndicator) {
